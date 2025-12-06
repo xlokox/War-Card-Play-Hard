@@ -15,7 +15,7 @@ public:
     name = other.name;
     hand = other.hand;
   }
-  ~Player() { delete this; }
+  ~Player();
 
   void receiveCard(Card c);
   Card playCard();
