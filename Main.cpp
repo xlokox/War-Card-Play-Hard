@@ -1,6 +1,4 @@
 #include <iostream>
-#include <fstream>
-#include "Card.h"
 #include "Deck.h"
 #include "Player.h"
 #include "Game.h"
@@ -10,7 +8,7 @@ int main() {
     Deck mainDeck;
 
     // Populate the deck from the file
-    mainDeck.populateDeckFromFile("deck.txt");
+    mainDeck.populateDeckFromFile("Cards.txt");
 
     // Shuffle the main deck before starting
     mainDeck.shuffle();
