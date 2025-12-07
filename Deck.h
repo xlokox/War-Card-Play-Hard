@@ -11,11 +11,13 @@ private:
   Card *cards; // array of Card objects
 
 public:
-  Deck() { Card *cards[cardCount]; }
+  Deck() { cards = new Card[cardCount]; }
 
   Deck(const Deck &other) {
-    cards = other.cards;
-    cardCount = other.cardCount;
+    cards = new Card[other.cardCount];
+    for (int i = 0; i < other.cardCount; i++) {
+      cards[i] = other.cards[i];
+    }
   }
 
   // Methods

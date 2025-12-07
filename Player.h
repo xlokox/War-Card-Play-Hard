@@ -1,6 +1,7 @@
 #ifndef __PLAYER_H
 #define __PLAYER_H
 #include "Deck.h"
+#include <cstring>
 #include <iostream>
 using namespace std;
 
@@ -10,12 +11,20 @@ private:
   Deck hand;
 
 public:
-  Player(char *n) { name = n; }
+  Player(char *n) {
+    int len = strlen(n);
+    name = new char[len + 1];
+    strcpy(name, n);
+  }
+
   Player(const Player &other) {
-    name = other.name;
+    int len = strlen(other.name);
+    name = new char[len + 1];
+    strcpy(name, other.name);
     hand = other.hand;
   }
-  ~Player();
+
+  ~Player() { delete[] name; }
 
   void receiveCard(Card c);
   Card playCard();

@@ -1,13 +1,6 @@
-#include <iostream>
 #include "player.h"
+#include <iostream>
 
 using namespace std;
 
-Player::Player(const char* n)
-{
 
-
-
-
-    ~Player();
-}

@@ -12,15 +12,21 @@ private:
 
 public:
   Game(char *p1, char *p2) {
-    *player1 = p1;
-    *player2 = p2;
+    player1 = new Player(p1);
+    player2 = new Player(p2);
   };
+
   Game(const Game &other) {
-    player1 = other.player1;
-    player2 = other.player2;
+    player1 = new Player(*other.player1);
+    player2 = new Player(*other.player2);
     mainDeck = other.mainDeck;
   };
-  ~Game() { delete this; };
+
+  ~Game() {
+    delete player1;
+    delete player2;
+  };
+
   void start();
   void playRound();
   int checkWinner();
