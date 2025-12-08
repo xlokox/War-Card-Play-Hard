@@ -17,7 +17,7 @@ public:
     strcpy(name, n);
   }
 
-  Player(const Player &other) {
+  Player::Player(const Player &other) {
     int len = strlen(other.name);
     name = new char[len + 1];
     strcpy(name, other.name);
