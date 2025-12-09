@@ -1,34 +1,37 @@
+// Names: Arad David, Daniel Knafel
+// IDs: 206779597, -id-
+
 #ifndef __GAME_H
 #define __GAME_H
 
-#include "Deck.h"
 #include "Player.h"
 
 class Game {
 private:
-  Player *player1;
-  Player *player2;
-  Deck mainDeck;
+  Player player1;
+  Player player2;
 
 public:
-  Game(char *p1, char *p2) {
-    player1 = new Player(p1);
-    player2 = new Player(p2);
-  };
+  // Constructor to initialize the game with two players
+  Game(const Player &p1, const Player &p2);
 
-  Game(const Game &other) {
-    player1 = new Player(*other.player1);
-    player2 = new Player(*other.player2);
-    mainDeck = other.mainDeck;
-  };
+  // Copy constructor for deep copying of game objects
+  Game(const Game &other);
 
-  ~Game() {
-    delete player1;
-    delete player2;
-  };
+  // Assignment operator for proper memory management
+  Game &operator=(const Game &other);
 
+  // Destructor to free allocated memory
+  ~Game();
+
+  // Starts the game
   void start();
+
+  // Plays a round of the game
   void playRound();
+
+  // Checks and returns the winner of the game (1 for player1, 2 for player2, 0
+  // for no winner yet)
   int checkWinner();
 };
 
