@@ -1,18 +1,17 @@
-class Room
-{
-    private:
-        char *name;
-        Item item;
-        Monster monster;
+class Room {
+private:
+  char *name;
+  Item item;
+  Monster monster;
 
-        public:
-            Room north, south, east, west;
+public:
+  Room north, south, east, west;
 
-            //Methods
-            setItem(Item *i);
-            setMonster(Monster *m);
-            connectNorth(Room *room);
-            connectSouth(Room *room);
-            connectEast(Room *room);
-            connectWest(Room *room);
+  // Methods
+  setItem(Item *i);
+  setMonster(Monster *m);
+  connectNorth(Room *room);
+  connectSouth(Room *room);
+  connectEast(Room *room);
+  connectWest(Room *room);
 };

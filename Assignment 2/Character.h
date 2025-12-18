@@ -1,5 +1,4 @@
 
-
 class Character {
 private:
   char *name;

@@ -1,12 +1,15 @@
-class Item 
-{
-    private:
-        char *name;
-        int healthBonus;
-        int strengthBonus;
-        int defenseBonus;
+#ifndef __ITEM_H
+#define __ITEM_H
 
-        public:
-            Item(char *n, int h, int s, int d);
-            
+class Item {
+private:
+  char *name;
+  int healthBonus;
+  int strengthBonus;
+  int defenseBonus;
+
+public:
+  Item(char *n, int h, int s, int d);
 };
+
+#endif
