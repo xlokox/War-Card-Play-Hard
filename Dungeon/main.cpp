@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 
+//Dungeon Crawlers - Arad David & Daniel Knafel
+
 int main() {
   Game game;
   game.loadFromFile("Input.txt");

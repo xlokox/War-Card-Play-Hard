@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/araddavid/Documents/Github/War-Card-Play-Hard/Dungeon/main'
+relocations:     []
+...
